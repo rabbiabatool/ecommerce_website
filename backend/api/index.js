@@ -10,7 +10,7 @@ var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8m
 
 app.use(cors(
     {
-        origin:[""],
+        origin:["https://ecommerce-website-frontend-kappa.vercel.app"],
         methods:["POST", "GET"],
         credentials:true
     }
