@@ -358,3 +358,6 @@ app.listen(4000, () =>{
     console.log("server up and running");
 })
 
+module.exports = (req, res) => {
+    res.status(200).send('Server up and running');
+};
