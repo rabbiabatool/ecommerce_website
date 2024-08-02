@@ -8,7 +8,14 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8mCHHICS73VUhL8iWd6BPwjaRphPue6fUeTUW7G6gttEtYYYwJz00tEgfDF8X');
 
-app.use(cors());
+app.use(cors(
+    {
+        origin:["https://ecommerce-website-frontend-kappa.vercel.app"],
+        methods:["POST", "GET"],
+        credentials:true
+    }
+));
+
 // Middleware to parse incoming request bodies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -357,6 +364,10 @@ app.use(errHandler);
 app.listen(4000, () =>{
     console.log("server up and running");
 })
+module.exports = (req, res) => {
+  res.status(200).send('Server up and running');
+};
+
 
 module.exports = (req, res) => {
     res.status(200).send('Server up and running');

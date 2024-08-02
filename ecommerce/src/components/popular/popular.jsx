@@ -7,7 +7,7 @@ import { useEffect } from "react";
 const Popular = () => {
     const [Data_product,setCollection] = useState([]);
     useEffect(()=>{
-        fetch('https://ecommerce-website-three-iota.vercel.app/popular')
+        fetch('https://ecommerce-website-server-psi.vercel.app/popular')
         .then((response)=>response.json())
         .then((data)=>setCollection(data))
 
