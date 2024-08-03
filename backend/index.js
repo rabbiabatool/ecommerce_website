@@ -9,13 +9,7 @@ const jwt = require('jsonwebtoken');
 var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8mCHHICS73VUhL8iWd6BPwjaRphPue6fUeTUW7G6gttEtYYYwJz00tEgfDF8X');
 
 
-app.use(cors(
-{
-       origin:["https://ecommerce-website.vercel.app"],
-       methods:["POST", "GET"],
-       credentials:true
-}
-));
+app.use(cors());
 // Middleware to parse incoming request bodies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
