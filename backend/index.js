@@ -8,13 +8,14 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8mCHHICS73VUhL8iWd6BPwjaRphPue6fUeTUW7G6gttEtYYYwJz00tEgfDF8X');
 
-app.use(cors(
-    {
-        origin:["https://ecommerce-website-frontend-kappa.vercel.app"],
-        methods:["POST", "GET"],
-        credentials:true
-    }
-));
+// app.use(cors(
+//     {
+//         origin:["https://ecommerce-website-frontend-kappa.vercel.app"],
+//         methods:["POST", "GET"],
+//         credentials:true
+//     }
+// ));
+app.use(cors());
 
 // Middleware to parse incoming request bodies
 app.use(bodyParser.json());
@@ -360,9 +361,9 @@ app.post('/remove_order',async (req,res) =>{
 
 })
 
-app.get("/" , (req,res) =>{
-    res.json("hello");
-})
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 
 app.use(errHandler);
 app.listen(4000, () =>{

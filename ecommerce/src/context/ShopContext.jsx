@@ -25,12 +25,12 @@ const ShopContextProvider = (props) => {
 
     useEffect(()=>{
 
-        fetch('https://ecommerce-website-server-psi.vercel.app/all_products')
+        fetch('http://localhost:4000/all_products')
         .then((response)=>response.json())
         .then((data)=>setAllProducts(data))
 
         if(localStorage.getItem('auth-token')){
-            fetch('https://ecommerce-website-server-psi.vercel.app/getCart',{
+            fetch('http://localhost:4000/getCart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -51,7 +51,7 @@ const ShopContextProvider = (props) => {
 
             setCartItems((prev) => ({ ...prev, [itemId]: prev[itemId] + 1 }));
 
-            fetch('https://ecommerce-website-server-psi.vercel.app/add_to_cart',{
+            fetch('http://localhost:4000/add_to_cart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',
@@ -75,7 +75,7 @@ const ShopContextProvider = (props) => {
         setCartItems((prev) => ({...prev, [itemId]:prev[itemId]- 1}));
 
         if(localStorage.getItem('auth-token')){
-            fetch('https://ecommerce-website-server-psi.vercel.app/removeCart',{
+            fetch('http://localhost:4000/removeCart',{
                 method:'POST',
                 headers:{
                     Accept:'application/form-data',

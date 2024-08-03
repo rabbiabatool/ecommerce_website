@@ -9,7 +9,7 @@ const NewCollections = () => {
     const [new_collection,setNew_Collection] = useState([]);
 
     useEffect(()=>{
-        fetch('https://ecommerce-website-server-psi.vercel.app/new_collections')
+        fetch('http://localhost:4000/new_collections')
         .then((response)=>response.json())
         .then((data)=>setNew_Collection(data));
     },[])

@@ -23,7 +23,7 @@ const LoginSignup = () => {
         console.log("login");
         let responseData;
 
-        await fetch('https://ecommerce-website-server-psi.vercel.app/login',{
+        await fetch('http://localhost:4000/login',{
 
             method:'POST',
             headers:{
@@ -50,7 +50,7 @@ const LoginSignup = () => {
         console.log("signup");
         let responseData;
 
-        await fetch('https://ecommerce-website-server-psi.vercel.app/signup',{
+        await fetch('http://localhost:4000/signup',{
 
             method:'POST',
             headers:{
