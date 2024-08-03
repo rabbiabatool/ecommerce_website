@@ -9,7 +9,7 @@ const jwt = require('jsonwebtoken');
 var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8mCHHICS73VUhL8iWd6BPwjaRphPue6fUeTUW7G6gttEtYYYwJz00tEgfDF8X');
 
 
-app.use(cors());
+// app.use(cors());
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
@@ -365,3 +365,4 @@ app.listen(4000, () =>{
     console.log("server up and running");
 })
 
+module.exports=app;
