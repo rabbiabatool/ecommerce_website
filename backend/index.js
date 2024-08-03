@@ -9,7 +9,13 @@ const jwt = require('jsonwebtoken');
 var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8mCHHICS73VUhL8iWd6BPwjaRphPue6fUeTUW7G6gttEtYYYwJz00tEgfDF8X');
 
 
-// app.use(cors());
+app.use(cors(
+    {
+        "origin":["https://ecommerce-website-o5k3.vercel.app"],
+        "method":["POST,"GET"],
+        "credentials":true
+    }
+));
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
