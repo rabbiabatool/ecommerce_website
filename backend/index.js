@@ -361,9 +361,9 @@ app.post('/remove_order',async (req,res) =>{
 
 
 app.use(errHandler);
-app.listen(4000, () =>{
-    console.log("server up and running");
-})
+// app.listen(4000, () =>{
+//     console.log("server up and running");
+// })
 
 
 module.exports = app;
