@@ -10,6 +10,10 @@ var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8m
 
 
 app.use(cors());
+
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 // Middleware to parse incoming request bodies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -354,9 +358,7 @@ app.post('/remove_order',async (req,res) =>{
 
 })
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+
 
 app.use(errHandler);
 app.listen(4000, () =>{
