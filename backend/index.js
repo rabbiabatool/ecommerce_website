@@ -17,14 +17,17 @@ app.use(cors(
     }
 ));
 
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
+app.listen(4000, () => console.log("Server ready on port 3000."));
+
+module.exports = app;
 // Middleware to parse incoming request bodies
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-mongoose.connect("mongodb+srv://rabbiabatool875:0xxq5tFIGb5ZJaSk@cluster0.dfxy06s.mongodb.net/e-commerce?retryWrites=true&w=majority&appName=Cluster0")
+// mongoose.connect("mongodb+srv://rabbiabatool875:0xxq5tFIGb5ZJaSk@cluster0.dfxy06s.mongodb.net/e-commerce?retryWrites=true&w=majority&appName=Cluster0")
 
 app.post('/create-checkout-session', async (req, res) => {
     
@@ -367,8 +370,4 @@ app.post('/remove_order',async (req,res) =>{
 
 
 app.use(errHandler);
-app.listen(4000, () =>{
-    console.log("server up and running");
-})
 
-module.exports=app;
