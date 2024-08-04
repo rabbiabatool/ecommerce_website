@@ -4,7 +4,7 @@ const multer = require("multer");
 const path= require("path");
 const mongoose= require('mongoose');
 const bodyParser = require('body-parser');
-const cors = require('cors');
+// const cors = require('cors');
 const jwt = require('jsonwebtoken');
 var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8mCHHICS73VUhL8iWd6BPwjaRphPue6fUeTUW7G6gttEtYYYwJz00tEgfDF8X');
 
@@ -369,7 +369,10 @@ app.post('/remove_order',async (req,res) =>{
 })
 
 
-
+app.listen(4000, function(err){
+    if (err) console.log("Error in server setup")
+    console.log("Server listening on Port", 4000);
+})
 
 
 app.use(errHandler);
