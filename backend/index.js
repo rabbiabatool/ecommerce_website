@@ -12,13 +12,13 @@ var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8m
 app.use(cors(
     {
         "origin":["https://ecommerce-website-o5k3.vercel.app"],
-        "method":["POST,"GET"],
+        "method":["POST","GET"],
         "credentials":true
     }
 ));
 
 
-app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get('/', (req, res) => res.send("Express on Vercel"));
 
 app.listen(4000, () => console.log("Server ready on port 3000."));
 
