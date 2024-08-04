@@ -27,7 +27,7 @@ module.exports = app;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// mongoose.connect("mongodb+srv://rabbiabatool875:0xxq5tFIGb5ZJaSk@cluster0.dfxy06s.mongodb.net/e-commerce?retryWrites=true&w=majority&appName=Cluster0")
+mongoose.connect("mongodb+srv://rabbiabatool875:0xxq5tFIGb5ZJaSk@cluster0.dfxy06s.mongodb.net/e-commerce?retryWrites=true&w=majority&appName=Cluster0")
 
 app.post('/create-checkout-session', async (req, res) => {
     
