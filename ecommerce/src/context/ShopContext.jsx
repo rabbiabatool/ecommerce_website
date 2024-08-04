@@ -66,7 +66,7 @@ const ShopContextProvider = (props) => {
         }
         else{
 
-            window.location.replace("/login");
+            window.location.replace("#/login");
     
         }
     };

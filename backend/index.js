@@ -9,7 +9,14 @@ const jwt = require('jsonwebtoken');
 var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8mCHHICS73VUhL8iWd6BPwjaRphPue6fUeTUW7G6gttEtYYYwJz00tEgfDF8X');
 
 
-// app.use(cors());
+// app.use(cors(
+//     {
+//         "origin":["https://ecommerce-website-o5k3.vercel.app"],
+//         "method":["POST","GET"],
+//         "credentials":true
+//     }
+// ));
+
 
 // Middleware to parse incoming request bodies
 app.use(bodyParser.json());
@@ -20,6 +27,8 @@ mongoose.connect("mongodb+srv://rabbiabatool875:0xxq5tFIGb5ZJaSk@cluster0.dfxy06
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
+
+
 
 app.post('/create-checkout-session', async (req, res) => {
     
@@ -361,7 +370,7 @@ app.post('/remove_order',async (req,res) =>{
 
 
 
+
+
 app.use(errHandler);
-app.listen(4000, () =>{
-    console.log("server up and running");
-})
+
