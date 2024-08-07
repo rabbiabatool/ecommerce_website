@@ -4,18 +4,8 @@ const multer = require("multer");
 const path= require("path");
 const mongoose= require('mongoose');
 const bodyParser = require('body-parser');
-// const cors = require('cors');
 const jwt = require('jsonwebtoken');
-var stripe = require('stripe')('sk_test_51Phy2JAfxtUK8Ufa8ePivAyNIfRalMRJZDOLN8mCHHICS73VUhL8iWd6BPwjaRphPue6fUeTUW7G6gttEtYYYwJz00tEgfDF8X');
 
-
-// app.use(cors(
-//     {
-//         "origin":["https://ecommerce-website-o5k3.vercel.app"],
-//         "method":["POST","GET"],
-//         "credentials":true
-//     }
-// ));
 
 
 // Middleware to parse incoming request bodies
@@ -369,10 +359,9 @@ app.post('/remove_order',async (req,res) =>{
 })
 
 
-app.listen(4000, function(err){
-    if (err) console.log("Error in server setup")
-    console.log("Server listening on Port", 4000);
-})
+app.listen(4000, () => {
+    console.log("Server listening on port 4000");
+});
 
 
 app.use(errHandler);
